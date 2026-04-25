@@ -1,6 +1,7 @@
 import { Button, StyleSheet, Text, TextInput, View } from "react-native";
 import { io } from "socket.io-client";
 import { useEffect, useState } from "react";
+import QRCode from 'react-native-qrcode-svg';
 
 const socket = io(process.env.EXPO_PUBLIC_API_URL);
 
@@ -52,6 +53,10 @@ export default function HomeScreen() {
           </Text>
         ))}
       </View>
+
+      <QRCode
+        value="ABCDE"
+      />
     </View>
   );
 }
